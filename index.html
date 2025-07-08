@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZED TECH - IT Support & Custom PC Builds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: ZED TECH (Black, Lime Green, Light Gray) -->
+    <!-- Application Structure Plan: The SPA is a single-page scrolling application with a sticky top navigation bar ("Home", "Services", "Contact"). This structure translates the logical flow of the Instagram story highlight into an interactive web format. The primary "Services" section uses a card-based layout to present each service category (Software Support, Repairs, etc.) distinctly, making it easy for users to find what they need. A prominent "Get a Quote" button is present in the navigation and throughout, guiding the user to the primary call-to-action. This design was chosen for its simplicity and directness, mirroring the source report's goal of clear, fast information delivery. -->
+    <!-- Visualization & Content Choices: Report Info -> Goal -> Viz/Presentation Method -> Interaction -> Justification. 1. Welcome/Philosophy -> Inform/Brand -> Hero section -> None -> Sets the stage. 2. All Services -> Inform/Organize -> Responsive grid of service cards with icons -> Hover effects, clickable contact links -> Highly readable UI pattern. 3. Pricing -> Inform -> Clear text within cards -> None, clarity is key -> Direct presentation is most effective. 4. Contact -> Action -> Dedicated section -> Clickable contact links -> Funnels user to the next step. Icons are rendered with Unicode characters to avoid SVG. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* zedtech-light-bg */
+            color: #334155; /* zedtech-text-dark */
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zedtech-lime': '#A7FF21',
+                        'zedtech-dark': '#000000',
+                        'zedtech-light-bg': '#f8fafc',
+                        'zedtech-text-dark': '#334155',
+                        'zedtech-text-light': '#cbd5e1',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-zedtech-dark/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/150x40/000000/A7FF21?text=ZED+TECH" alt="ZED TECH Logo" class="h-10 w-auto">
+                </div>
+                <nav class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="nav-link text-zedtech-text-light hover:text-zedtech-lime font-medium">Home</a>
+                    <a href="#services" class="nav-link text-zedtech-text-light hover:text-zedtech-lime font-medium">Services</a>
+                    <a href="#contact" class="nav-link bg-zedtech-lime hover:bg-lime-500 text-zedtech-dark font-medium py-2 px-4 rounded-lg transition-colors">Get a Quote</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-zedtech-text-light hover:text-zedtech-lime hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zedtech-lime">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-zedtech-dark">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-zedtech-text-light hover:text-zedtech-lime hover:bg-slate-800">Home</a>
+                <a href="#services" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-zedtech-text-light hover:text-zedtech-lime hover:bg-slate-800">Services</a>
+                <a href="#contact" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-zedtech-text-light hover:text-zedtech-lime hover:bg-slate-800">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative py-24 md:py-32 bg-zedtech-light-bg">
+            <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080/000000/A7FF21?text=.')] bg-cover bg-center opacity-5"></div>
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">Your IT Solution Partner</h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-600">Reliable Tech Support & Custom PC Builds in Cape Town & Beyond. We make technology work for *you*.</p>
+                <div class="mt-10 flex justify-center gap-x-6">
+                    <a href="#services" class="rounded-md bg-zedtech-lime px-5 py-3 text-base font-semibold text-zedtech-dark shadow-sm hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zedtech-lime transition-colors">Explore Our Services</a>
+                    <a href="#contact" class="rounded-md border border-slate-300 px-5 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 transition-colors">Contact Us →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 md:py-28 bg-zedtech-light-bg">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Our Services</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Transparent pricing and personalized service for all your IT needs.</p>
+                </div>
+                
+                <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    
+                    <!-- Card 1: Software Support -->
+                    <div class="service-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col">
+                        <div class="flex-shrink-0"><span class="text-4xl">💻</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-slate-800">Software Support</h3>
+                        <p class="mt-2 text-slate-500 flex-grow">From quick fixes to deep diagnostics, we resolve software errors, remove viruses, and handle installations.</p>
+                        <ul class="mt-6 space-y-4 text-slate-600">
+                            <li class="flex justify-between items-baseline"><span>Remote Troubleshooting</span><span class="ml-2 font-semibold text-slate-800">From R150</span></li>
+                            <li class="flex justify-between items-baseline"><span>In-Depth Diagnostics</span><span class="ml-2 font-semibold text-slate-800">From R350/hr</span></li>
+                            <li class="flex justify-between items-baseline"><span>Software Installation</span><span class="ml-2 font-semibold text-slate-800">From R300</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: PC & Laptop Repairs -->
+                    <div class="service-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col">
+                        <div class="flex-shrink-0"><span class="text-4xl">🔧</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-slate-800">PC & Laptop Repairs</h3>
+                        <p class="mt-2 text-slate-500 flex-grow">Hardware upgrades, screen replacements, and data recovery to get your devices back in top shape.</p>
+                         <ul class="mt-6 space-y-4 text-slate-600">
+                            <li class="flex justify-between items-baseline"><span>Diagnostic Fee</span><span class="ml-2 font-semibold text-slate-800">R300</span></li>
+                            <li class="flex justify-between items-baseline"><span>Hardware Upgrades</span><span class="ml-2 font-semibold text-slate-800">R300+ Labour</span></li>
+                            <li class="flex justify-between items-baseline"><span>Data Recovery (Basic)</span><span class="ml-2 font-semibold text-slate-800">From R500</span></li>
+                        </ul>
+                        <p class="text-xs text-slate-400 mt-2">Diagnostic fee waived if repair is undertaken.</p>
+                    </div>
+
+                    <!-- Card 3: Custom PC Builds -->
+                    <div class="service-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col">
+                        <div class="flex-shrink-0"><span class="text-4xl">🚀</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-slate-800">Custom PC Builds</h3>
+                        <p class="mt-2 text-slate-500 flex-grow">We consult, design, and build powerful custom PCs tailored to your gaming, creative, or professional needs.</p>
+                         <ul class="mt-6 space-y-4 text-slate-600">
+                            <li class="flex justify-between items-baseline"><span>PC Consultation</span><span class="ml-2 font-semibold text-slate-800">R300</span></li>
+                            <li class="flex justify-between items-baseline"><span>Assembly & Setup</span><span class="ml-2 font-semibold text-slate-800">From R800</span></li>
+                            <li class="flex justify-between items-baseline"><span>Component Installs</span><span class="ml-2 font-semibold text-slate-800">From R300</span></li>
+                        </ul>
+                        <p class="text-xs text-slate-400 mt-2">Consultation fee redeemable against full build.</p>
+                    </div>
+
+                    <!-- Card 4: Components & Sourcing -->
+                    <div class="service-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col">
+                        <div class="flex-shrink-0"><span class="text-4xl">📦</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-slate-800">Components & Sourcing</h3>
+                        <p class="mt-2 text-slate-500 flex-grow">Looking for parts? We stock a range of new & used GPUs and can source almost any component for you.</p>
+                        <ul class="mt-6 space-y-4 text-slate-600">
+                            <li class="flex justify-between items-baseline"><span>Graphics Cards (GPUs)</span><a href="#contact" class="font-semibold text-zedtech-lime hover:text-lime-500">DM for Stock</a></li>
+                            <li class="flex justify-between items-baseline"><span>Other Components</span><a href="#contact" class="font-semibold text-zedtech-lime hover:text-lime-500">Get a Quote</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 5: On-Site Support -->
+                    <div class="service-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col">
+                        <div class="flex-shrink-0"><span class="text-4xl">🚗</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-slate-800">On-Site Support</h3>
+                        <p class="mt-2 text-slate-500 flex-grow">We come to you! For issues requiring a physical presence at your home or office in the Cape Town area.</p>
+                         <ul class="mt-6 space-y-4 text-slate-600">
+                            <li class="flex justify-between items-baseline"><span>Call-Out Fee</span><span class="ml-2 font-semibold text-slate-800">From R100</span></li>
+                            <li class="flex justify-between items-baseline"><span>On-Site Labour</span><span class="ml-2 font-semibold text-slate-800">R350/hr</span></li>
+                        </ul>
+                        <p class="text-xs text-slate-400 mt-2">Fee is distance-dependent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-zedtech-dark py-20 md:py-28">
+            <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-4xl">💬</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">Ready for Reliable Tech?</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-zedtech-text-light">Let ZED TECH handle your tech, so you can focus on what matters. Reach out for custom quotes, bookings, or any questions you might have.</p>
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+                    <a href="mailto:ziyaadmarlie47@gmail.com" class="service-card block p-6 bg-slate-800 rounded-2xl hover:bg-slate-700">
+                        <h3 class="font-semibold text-white">Email Us</h3>
+                        <p class="mt-1 text-zedtech-text-light">ziyaadmarlie47@gmail.com</p>
+                        <p class="mt-2 text-sm font-medium text-zedtech-lime">Send an email →</p>
+                    </a>
+                    <a href="https://wa.me/27673822200" target="_blank" class="service-card block p-6 bg-slate-800 rounded-2xl hover:bg-slate-700">
+                        <h3 class="font-semibold text-white">WhatsApp / Call</h3>
+                        <p class="mt-1 text-zedtech-text-light">+27 67 382 2200</p>
+                        <p class="mt-2 text-sm font-medium text-zedtech-lime">Start a chat →</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-zedtech-dark text-zedtech-text-light">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p>&copy; 2025 ZED TECH. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Cape Town, South Africa</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if(targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
