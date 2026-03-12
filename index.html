@@ -20,112 +20,134 @@
     <style>
         body { background-color: #0A0A0A; color: white; }
         .hero-bg { background: radial-gradient(circle at 50% 50%, rgba(167, 255, 33, 0.08) 0%, rgba(10, 10, 10, 1) 70%); }
+        
+        /* Coded Logo Styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-mark {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            background: #A7FF21;
+            display: flex;
+            align-items: center;
+            justify-center;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .logo-z {
+            color: black;
+            font-weight: 900;
+            font-size: 32px;
+            line-height: 1;
+            transform: skewX(-10deg);
+        }
+        .logo-text-vertical {
+            position: absolute;
+            font-size: 6px;
+            font-weight: 900;
+            background: #A7FF21;
+            color: black;
+            transform: rotate(-90deg);
+            white-space: nowrap;
+            right: -12px;
+            padding: 2px 4px;
+        }
+
         .bento-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; transition: all 0.3s ease; overflow: hidden; }
-        .bento-card:hover { border-color: #A7FF21; background: rgba(167, 255, 33, 0.02); }
+        .bento-card:hover { border-color: #A7FF21; transform: translateY(-4px); }
     </style>
 </head>
 <body class="antialiased selection:bg-zed-lime selection:text-black">
 
     <nav class="sticky top-0 z-50 border-b border-white/10 bg-zed-black/90 backdrop-blur-md">
         <div class="container mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="h-10 w-10 bg-zed-lime flex items-center justify-center font-bold text-black rounded-lg">Z</div>
-                <span class="text-xl font-bold tracking-tighter uppercase">ZED <span class="text-zed-lime">TECH</span></span>
+            
+            <div class="logo-container">
+                <div class="logo-mark">
+                    <span class="logo-z italic">Z</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tighter uppercase leading-none">
+                        ZED <span class="text-zed-lime">TECH</span>
+                    </span>
+                    <span class="text-[8px] text-gray-500 tracking-[0.3em] uppercase mt-1">Cape Town</span>
+                </div>
             </div>
-            <a href="https://wa.me/27754611011" class="hidden md:block px-5 py-2 border border-zed-lime text-zed-lime hover:bg-zed-lime hover:text-black transition-all font-bold text-xs tracking-widest">WHATSAPP</a>
+
+            <a href="https://wa.me/27754611011" class="px-5 py-2 border border-zed-lime text-zed-lime hover:bg-zed-lime hover:text-black transition-all font-bold text-xs tracking-widest">
+                WHATSAPP
+            </a>
         </div>
     </nav>
 
     <main class="hero-bg min-h-screen">
         <section class="pt-20 pb-16">
             <div class="container mx-auto max-w-7xl px-6">
-                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-6">NO BLOAT.<br><span class="text-zed-lime italic">MAX POWER.</span></h1>
-                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-12 uppercase tracking-wide font-light">Custom PC Architect & IT Specialist based in Cape Town.</p>
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-6">NO BLOAT.<br><span class="text-zed-lime italic uppercase">Max Power.</span></h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-12 uppercase tracking-widest font-light">Custom PC Architect & IT Specialist.</p>
             </div>
         </section>
 
-        <section id="services" class="py-12 pb-24">
+        <section id="services" class="pb-24">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     
-                    <div class="md:col-span-2 bento-card min-h-[400px] relative group">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                        <div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" style="background-image: url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&q=80&w=1000'); opacity: 0.6;"></div>
-                        <div class="absolute bottom-0 p-8 z-20">
-                            <span class="text-zed-lime text-xs font-bold tracking-[0.4em] uppercase mb-2 block">Premium Service</span>
-                            <h3 class="text-4xl font-bold uppercase tracking-tighter">Custom PC Assembly</h3>
-                            <p class="text-gray-300 mt-2">Labour starts at <span class="text-white font-bold">R800</span></p>
-                        </div>
+                    <div class="md:col-span-2 bento-card p-10 flex flex-col justify-end min-h-[300px] border-l-4 border-l-zed-lime">
+                        <h3 class="text-4xl font-bold uppercase tracking-tighter mb-2">Custom PC Builds</h3>
+                        <p class="text-gray-400 max-w-md">Gaming rigs, workstations, and server builds. Precision cable management included.</p>
+                        <p class="text-zed-lime font-bold mt-4 tracking-widest">LABOUR FROM R800</p>
                     </div>
 
                     <div class="bento-card p-8 flex flex-col justify-between">
-                        <i data-lucide="shield-check" class="w-10 h-10 text-zed-lime"></i>
+                        <i data-lucide="shield-alert" class="w-10 h-10 text-zed-lime"></i>
                         <div>
-                            <h3 class="text-2xl font-bold uppercase tracking-tighter mb-2">Repairs & OS</h3>
-                            <p class="text-gray-400 text-sm">Virus removal, driver optimization, and Windows clean installs.</p>
+                            <h3 class="text-2xl font-bold uppercase tracking-tighter mb-2">Repairs</h3>
+                            <p class="text-gray-400 text-sm">Windows optimization and virus removal.</p>
                         </div>
-                        <p class="text-zed-lime font-bold mt-4">FROM R150</p>
+                        <p class="text-zed-lime font-bold">R150+</p>
                     </div>
 
                     <div class="bento-card p-8 flex flex-col justify-between">
-                        <i data-lucide="activity" class="w-10 h-10 text-zed-lime"></i>
+                        <i data-lucide="cpu" class="w-10 h-10 text-zed-lime"></i>
                         <div>
                             <h3 class="text-2xl font-bold uppercase tracking-tighter mb-2">Diagnostics</h3>
-                            <p class="text-gray-400 text-sm">Component stress testing and identifying failing hardware.</p>
+                            <p class="text-gray-400 text-sm">Testing failing hardware components.</p>
                         </div>
-                        <p class="text-zed-lime font-bold mt-4">R300 FLAT</p>
+                        <p class="text-zed-lime font-bold">R300</p>
                     </div>
 
-                    <div class="md:col-span-2 bento-card min-h-[300px] relative group">
-                        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10"></div>
-                        <div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" style="background-image: url('https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80&w=1000'); opacity: 0.4;"></div>
-                        <div class="absolute inset-0 flex items-center p-8 z-20">
-                            <div class="max-w-xs">
-                                <h3 class="text-3xl font-bold uppercase tracking-tighter mb-2">Deep Cleaning</h3>
-                                <p class="text-gray-400 text-sm">Thermal paste re-application and compressed air detailing.</p>
-                                <p class="text-zed-lime font-bold mt-4">R300</p>
+                    <div class="md:col-span-2 bento-card p-10 flex flex-col justify-center">
+                        <div class="flex items-center gap-6">
+                            <i data-lucide="droplets" class="w-12 h-12 text-zed-lime"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold uppercase tracking-tighter">Deep Cleaning</h3>
+                                <p class="text-gray-400">Thermal paste replacement & dust detailing.</p>
+                                <p class="text-zed-lime font-bold mt-2">R300</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section class="py-20 border-t border-white/5">
-            <div class="container mx-auto max-w-xl px-6">
-                <div class="text-center mb-10">
-                    <h2 class="text-4xl font-bold uppercase tracking-tighter">Start Your Build</h2>
-                    <p class="text-gray-500 mt-2 italic">Fill out your specs and hit send.</p>
-                </div>
-                <div class="space-y-4">
-                    <input type="text" id="wa-name" placeholder="YOUR NAME" class="w-full bg-white/5 border border-white/10 p-4 outline-none focus:border-zed-lime">
-                    <select id="wa-budget" class="w-full bg-white/5 border border-white/10 p-4 outline-none focus:border-zed-lime">
-                        <option>R10k - R20k</option>
-                        <option>R20k - R40k</option>
-                        <option>R40k+</option>
-                    </select>
-                    <button onclick="sendToWhatsApp()" class="w-full py-5 bg-zed-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-all">
-                        SEND TO WHATSAPP
-                    </button>
-                </div>
+        <section class="py-20 bg-white/5 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 uppercase italic tracking-tighter">Ready to upgrade?</h2>
+                <a href="https://wa.me/27754611011" class="inline-block px-12 py-5 bg-zed-lime text-black font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform">
+                    Message via WhatsApp
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="py-12 text-center border-t border-white/5 bg-black">
-        <p class="text-gray-600 text-[10px] tracking-[0.5em] uppercase italic">© 2026 ZED TECH • CAPE TOWN • 075 461 1011</p>
+    <footer class="py-10 text-center text-gray-600 text-[10px] tracking-[0.5em] uppercase">
+        © 2026 ZED TECH • Cape Town • Precision Performance
     </footer>
 
-    <script>
-        lucide.createIcons();
-        function sendToWhatsApp() {
-            const name = document.getElementById('wa-name').value;
-            const budget = document.getElementById('wa-budget').value;
-            if(!name) { alert("Name required!"); return; }
-            const msg = `Hi Zed Tech! I'm ${name}. I have a budget of ${budget} for a custom build.`;
-            window.open(`https://wa.me/27754611011?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
