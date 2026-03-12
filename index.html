@@ -14,68 +14,128 @@
                     colors: {
                         'zed-lime': '#A7FF21',
                         'zed-black': '#0A0A0A',
-                        'zed-gray': '#1A1A1A',
                     },
-                    fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
                 }
             }
         }
     </script>
     <style>
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(167, 255, 33, 0.05) 0%, transparent 70%);
-        }
-        .stats-border {
-            border-left: 2px solid #A7FF21;
-        }
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
+        body { background-color: #0A0A0A; color: white; }
+        .hero-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(167, 255, 33, 0.08) 0%, rgba(10, 10, 10, 1) 70%);
         }
     </style>
 </head>
-<body class="bg-zed-black text-white antialiased selection:bg-zed-lime selection:text-black">
+<body class="antialiased selection:bg-zed-lime selection:text-black">
 
-    <div class="fixed inset-0 hero-gradient pointer-events-none"></div>
-
-    <nav class="sticky top-0 z-50 border-b border-white/5 bg-zed-black/80 backdrop-blur-md">
-        <div class="container mx-auto max-w-7xl px-6 h-24 flex items-center justify-between">
-            <a href="#home" class="flex items-center gap-4 group">
-                <img src="ZED TECH LOGO.jpg" alt="ZED TECH" class="h-12 md:h-14 w-auto transition-transform group-hover:scale-105">
-                <div class="h-8 w-[1px] bg-white/20 hidden sm:block"></div>
-                <div class="flex flex-col justify-center">
-                    <span class="text-xl md:text-2xl font-bold tracking-tighter uppercase leading-none">
-                        ZED <span class="text-zed-lime font-light">TECH</span>
+    <nav class="sticky top-0 z-50 border-b border-white/10 bg-zed-black/90 backdrop-blur-md">
+        <div class="container mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img src="ZED TECH LOGO.jpg" alt="Logo" class="h-10 w-auto">
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tighter uppercase leading-none">
+                        ZED <span class="text-zed-lime">TECH</span>
                     </span>
-                    <span class="text-[10px] text-gray-500 tracking-[0.3em] uppercase mt-1 hidden sm:block">
-                        Precision Performance
-                    </span>
+                    <span class="text-[9px] text-gray-500 tracking-[0.2em] uppercase mt-1">Precision Performance</span>
                 </div>
             </a>
-
-            <div class="hidden md:flex items-center gap-10">
-                <a href="#services" class="text-sm font-medium hover:text-zed-lime transition-colors tracking-widest uppercase">Services</a>
-                <a href="https://wa.me/27673822200" class="px-6 py-2 border border-zed-lime text-zed-lime hover:bg-zed-lime hover:text-black transition-all font-bold text-sm tracking-widest">
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-xs font-bold tracking-widest uppercase hover:text-zed-lime transition-colors">Services</a>
+                <a href="https://wa.me/27673822200" class="px-5 py-2 border border-zed-lime text-zed-lime hover:bg-zed-lime hover:text-black transition-all font-bold text-xs tracking-widest">
                     GET A QUOTE
                 </a>
             </div>
 
-            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            <button id="menu-toggle" class="md:hidden text-zed-lime">
+                <i data-lucide="menu" id="menu-icon"></i>
             </button>
         </div>
-
-        <div id="mobile-menu" class="hidden md:hidden absolute top-24 left-0 w-full bg-zed-black border-b border-white/5 p-6 flex flex-col gap-6 items-center text-center shadow-2xl">
-            <a href="#services" class="mobile-link text-lg font-medium tracking-widest uppercase hover:text-zed-lime">Services</a>
-            <a href="https://wa.me/27673822200" class="w-full py-4 border border-zed-lime text-zed-lime font-bold tracking-widest">
-                GET A QUOTE
-            </a>
+        
+        <div id="mobile-menu" class="hidden bg-zed-black border-b border-white/10 p-6 flex flex-col gap-4 text-center">
+            <a href="#services" class="text-sm font-bold tracking-widest uppercase py-2">Services</a>
+            <a href="https://wa.me/27673822200" class="text-zed-lime font-bold tracking-widest py-2">Get a Quote</a>
         </div>
     </nav>
 
-    <main class="relative">
-        <section id="home" class="py-20 md:py-32">
+    <main class="hero-bg min-h-screen">
+        <section class="pt-20 pb-32">
             <div class="container mx-auto max-w-7xl px-6">
-                <div class="max-w-4xl">
-                    <h1 class="text-5xl md:
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-8xl font-bold leading-[0.9] tracking-tighter mb-8">
+                        NO BLOAT.<br>
+                        <span class="text-zed-lime italic">MAX PERFORMANCE.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+                        Precision-built PCs and elite IT support for Cape Town’s power users.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-10 mb-12">
+                        <div class="border-l-2 border-zed-lime pl-4">
+                            <p class="text-2xl font-bold">R150</p>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest">Starting Price</p>
+                        </div>
+                        <div class="border-l-2 border-zed-lime pl-4">
+                            <p class="text-2xl font-bold">Cape Town</p>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest">Local Support</p>
+                        </div>
+                    </div>
+
+                    <a href="#services" class="inline-flex items-center gap-3 text-zed-lime font-bold uppercase tracking-widest group">
+                        See what we build <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 border-t border-white/5 bg-black/20">
+            <div class="container mx-auto max-w-7xl px-6">
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-zed-lime text-xs font-bold tracking-[0.4em] uppercase mb-10 italic underline underline-offset-8">Repairs & Diagnostics</h2>
+                        <div class="space-y-6">
+                            <div class="flex justify-between border-b border-white/5 pb-4">
+                                <span>Software Optimization</span>
+                                <span class="text-zed-lime font-bold">R150+</span>
+                            </div>
+                            <div class="flex justify-between border-b border-white/5 pb-4">
+                                <span>Hardware Diagnostics</span>
+                                <span class="text-zed-lime font-bold">R300</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-zed-lime text-xs font-bold tracking-[0.4em] uppercase mb-10 italic underline underline-offset-8">Custom Builds</h2>
+                        <div class="space-y-6">
+                            <div class="flex justify-between border-b border-white/5 pb-4">
+                                <span>Full PC Assembly</span>
+                                <span class="text-zed-lime font-bold">R800+</span>
+                            </div>
+                            <div class="flex justify-between border-b border-white/5 pb-4">
+                                <span>On-Site Callout</span>
+                                <span class="text-zed-lime font-bold">R350/hr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-gray-600 text-[10px] tracking-widest uppercase">© 2026 ZED TECH • Cape Town, ZA</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Simple Mobile Menu Toggle
+        const btn = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
