@@ -24,16 +24,14 @@
         }
     </script>
     <style>
-        .glass-panel {
-            background: rgba(26, 26, 26, 0.6);
-            border: 1px solid rgba(167, 255, 33, 0.1);
-            backdrop-filter: blur(12px);
-        }
         .hero-gradient {
             background: radial-gradient(circle at 50% 50%, rgba(167, 255, 33, 0.05) 0%, transparent 70%);
         }
         .stats-border {
             border-left: 2px solid #A7FF21;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -43,120 +41,41 @@
 
     <nav class="sticky top-0 z-50 border-b border-white/5 bg-zed-black/80 backdrop-blur-md">
         <div class="container mx-auto max-w-7xl px-6 h-24 flex items-center justify-between">
-            <div class="flex items-center">
-                <img src="ZED TECH LOGO.jpg" alt="ZED TECH" class="h-16 w-auto hover:scale-105 transition-transform">
-            </div>
+            <a href="#home" class="flex items-center gap-4 group">
+                <img src="ZED TECH LOGO.jpg" alt="ZED TECH" class="h-12 md:h-14 w-auto transition-transform group-hover:scale-105">
+                <div class="h-8 w-[1px] bg-white/20 hidden sm:block"></div>
+                <div class="flex flex-col justify-center">
+                    <span class="text-xl md:text-2xl font-bold tracking-tighter uppercase leading-none">
+                        ZED <span class="text-zed-lime font-light">TECH</span>
+                    </span>
+                    <span class="text-[10px] text-gray-500 tracking-[0.3em] uppercase mt-1 hidden sm:block">
+                        Precision Performance
+                    </span>
+                </div>
+            </a>
+
             <div class="hidden md:flex items-center gap-10">
                 <a href="#services" class="text-sm font-medium hover:text-zed-lime transition-colors tracking-widest uppercase">Services</a>
                 <a href="https://wa.me/27673822200" class="px-6 py-2 border border-zed-lime text-zed-lime hover:bg-zed-lime hover:text-black transition-all font-bold text-sm tracking-widest">
                     GET A QUOTE
                 </a>
             </div>
+
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-24 left-0 w-full bg-zed-black border-b border-white/5 p-6 flex flex-col gap-6 items-center text-center shadow-2xl">
+            <a href="#services" class="mobile-link text-lg font-medium tracking-widest uppercase hover:text-zed-lime">Services</a>
+            <a href="https://wa.me/27673822200" class="w-full py-4 border border-zed-lime text-zed-lime font-bold tracking-widest">
+                GET A QUOTE
+            </a>
         </div>
     </nav>
 
     <main class="relative">
-        <section class="py-24 md:py-40">
+        <section id="home" class="py-20 md:py-32">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="max-w-4xl">
-                    <h1 class="text-6xl md:text-8xl font-bold leading-none tracking-tighter mb-8">
-                        NO BLOAT. <br>
-                        <span class="text-zed-lime">MAX PERFORMANCE.</span>
-                    </h1>
-                    <p class="text-xl text-gray-400 mb-12 max-w-2xl leading-relaxed">
-                        Precision-built PCs and elite IT support for Cape Town's power users. We specialize in hardware diagnostics and custom workstations.
-                    </p>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <div class="stats-border pl-4">
-                            <span class="block text-2xl font-bold">R150</span>
-                            <span class="text-xs text-gray-500 uppercase tracking-widest">Starting Price</span>
-                        </div>
-                        <div class="stats-border pl-4">
-                            <span class="block text-2xl font-bold">Local</span>
-                            <span class="text-xs text-gray-500 uppercase tracking-widest">Cape Town Based</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="py-20 bg-white/5">
-            <div class="container mx-auto max-w-7xl px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    
-                    <div>
-                        <h2 class="text-zed-lime text-xs font-bold tracking-[0.3em] uppercase mb-8">Support & Repairs</h2>
-                        <div class="space-y-6">
-                            <div class="flex justify-between items-end border-b border-white/10 pb-4 group hover:border-zed-lime transition-colors">
-                                <div>
-                                    <h3 class="text-xl font-medium">Software Troubleshooting</h3>
-                                    <p class="text-sm text-gray-500">Virus removal, OS optimization</p>
-                                </div>
-                                <span class="text-zed-lime font-bold">R150+</span>
-                            </div>
-                            <div class="flex justify-between items-end border-b border-white/10 pb-4 group hover:border-zed-lime transition-colors">
-                                <div>
-                                    <h3 class="text-xl font-medium">Hardware Diagnostics</h3>
-                                    <p class="text-sm text-gray-500">Full system stress tests</p>
-                                </div>
-                                <span class="text-zed-lime font-bold">R300</span>
-                            </div>
-                            <div class="flex justify-between items-end border-b border-white/10 pb-4 group hover:border-zed-lime transition-colors">
-                                <div>
-                                    <h3 class="text-xl font-medium">Data Recovery</h3>
-                                    <p class="text-sm text-gray-500">Retrieval from failing drives</p>
-                                </div>
-                                <span class="text-zed-lime font-bold">R500+</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2 class="text-zed-lime text-xs font-bold tracking-[0.3em] uppercase mb-8">The Build Lab</h2>
-                        <div class="space-y-6">
-                            <div class="flex justify-between items-end border-b border-white/10 pb-4 group hover:border-zed-lime transition-colors">
-                                <div>
-                                    <h3 class="text-xl font-medium">Custom PC Assembly</h3>
-                                    <p class="text-sm text-gray-500">Complete build + cable management</p>
-                                </div>
-                                <span class="text-zed-lime font-bold">R800+</span>
-                            </div>
-                            <div class="flex justify-between items-end border-b border-white/10 pb-4 group hover:border-zed-lime transition-colors">
-                                <div>
-                                    <h3 class="text-xl font-medium">Component Sourcing</h3>
-                                    <p class="text-sm text-gray-500">GPUs, CPUs, and rare parts</p>
-                                </div>
-                                <span class="text-zed-lime font-bold italic">Market</span>
-                            </div>
-                            <div class="flex justify-between items-end border-b border-white/10 pb-4 group hover:border-zed-lime transition-colors">
-                                <div>
-                                    <h3 class="text-xl font-medium">On-Site Assistance</h3>
-                                    <p class="text-sm text-gray-500">We come to your home/office</p>
-                                </div>
-                                <span class="text-zed-lime font-bold">R350/hr</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="py-20 px-6">
-        <div class="container mx-auto max-w-7xl border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
-            <p class="text-gray-500 text-sm">© 2026 ZED TECH. CAPE TOWN, ZA.</p>
-            <div class="flex gap-6">
-                <a href="https://wa.me/27754611011" class="text-white hover:text-zed-lime transition-colors"><i data-lucide="phone"></i></a>
-                <a href="mailto:ziyaadmarlie47@gmail.com" class="text-white hover:text-zed-lime transition-colors"><i data-lucide="mail"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
-</html>
-
-
+                    <h1 class="text-5xl md:
